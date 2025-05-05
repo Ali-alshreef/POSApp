@@ -25,12 +25,29 @@ namespace POSApp.Forms
                 decimal price = Convert.ToDecimal(txtPrice.Text);
                 decimal priceValue = NUDPrice.Value;
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("خطأ يجل ادخال ارقام فقط في حقل السعر");
+                MessageBox.Show("يجب ادخال ارقام فقط");
                 //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+        }
+
+        private void FrmEditItem_Load(object sender, EventArgs e)
+        {
+            Active(false);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Active(true);
+        }
+
+        void Active(bool c)
+        {
+            txtItemName.Enabled = c;
+            txtPrice.Enabled = c;
+            NUDPrice.Enabled = c;
+            button1.Enabled = c;
         }
     }
 }

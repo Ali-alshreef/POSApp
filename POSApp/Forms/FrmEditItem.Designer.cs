@@ -34,12 +34,14 @@
             txtPrice = new TextBox();
             button1 = new Button();
             NUDPrice = new NumericUpDown();
+            button2 = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)NUDPrice).BeginInit();
             SuspendLayout();
             // 
             // txtItemName
             // 
-            txtItemName.Location = new Point(147, 55);
+            txtItemName.Location = new Point(125, 61);
             txtItemName.Margin = new Padding(4);
             txtItemName.Name = "txtItemName";
             txtItemName.PlaceholderText = "ادخل إسم الصنف";
@@ -50,7 +52,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(67, 58);
+            label1.Location = new Point(45, 64);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(60, 18);
@@ -60,7 +62,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(67, 115);
+            label2.Location = new Point(45, 121);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(34, 18);
@@ -69,7 +71,7 @@
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(147, 112);
+            txtPrice.Location = new Point(125, 118);
             txtPrice.Margin = new Padding(4);
             txtPrice.Name = "txtPrice";
             txtPrice.PlaceholderText = "ادخل السعر";
@@ -79,11 +81,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(315, 205);
+            button1.Location = new Point(293, 230);
             button1.Name = "button1";
             button1.Size = new Size(75, 32);
             button1.TabIndex = 4;
-            button1.Text = "button1";
+            button1.Text = "حفظ";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -91,7 +93,7 @@
             // 
             NUDPrice.DecimalPlaces = 3;
             NUDPrice.Increment = new decimal(new int[] { 2, 0, 0, 0 });
-            NUDPrice.Location = new Point(159, 159);
+            NUDPrice.Location = new Point(137, 165);
             NUDPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             NUDPrice.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             NUDPrice.Name = "NUDPrice";
@@ -101,11 +103,33 @@
             NUDPrice.ThousandsSeparator = true;
             NUDPrice.Value = new decimal(new int[] { 100000, 0, 0, 0 });
             // 
+            // button2
+            // 
+            button2.Location = new Point(164, 230);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 32);
+            button2.TabIndex = 6;
+            button2.Text = "جديد";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(45, 173);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(34, 18);
+            label3.TabIndex = 7;
+            label3.Text = "السعر";
+            // 
             // FrmEditItem
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(508, 316);
+            ClientSize = new Size(508, 317);
+            Controls.Add(label3);
+            Controls.Add(button2);
             Controls.Add(NUDPrice);
             Controls.Add(button1);
             Controls.Add(label2);
@@ -116,6 +140,7 @@
             Margin = new Padding(4);
             Name = "FrmEditItem";
             Text = "FrmEditItem";
+            Load += FrmEditItem_Load;
             ((System.ComponentModel.ISupportInitialize)NUDPrice).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -129,5 +154,7 @@
         private TextBox txtPrice;
         private Button button1;
         private NumericUpDown NUDPrice;
+        private Button button2;
+        private Label label3;
     }
 }
