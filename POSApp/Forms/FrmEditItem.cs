@@ -1,4 +1,6 @@
-﻿using System;
+﻿using POSApp.Data;
+using POSApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace POSApp.Forms
 {
     public partial class FrmEditItem : FrmBase // : Form
     {
+        POSAppDB db = new POSAppDB();
         public FrmEditItem()
         {
             InitializeComponent();
@@ -21,14 +24,16 @@ namespace POSApp.Forms
         {
             try
             {
-                string name = txtItemName.Text;
-                decimal price = Convert.ToDecimal(txtPrice.Text);
-                decimal priceValue = NUDPrice.Value;
+                
+                Product p = new Product();    
+                p.ItemName = txtItemName.Text;
+                p.Barcode = txtBarcode.Text;
+                p.Price = NUDPrice.Value;                
+                db.Products.Add(p);
             }
             catch (Exception)
             {
                 MessageBox.Show("يجب ادخال ارقام فقط");
-                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -45,7 +50,6 @@ namespace POSApp.Forms
         void Active(bool c)
         {
             txtItemName.Enabled = c;
-            txtPrice.Enabled = c;
             NUDPrice.Enabled = c;
             button1.Enabled = c;
         }

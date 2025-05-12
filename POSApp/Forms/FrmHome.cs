@@ -19,8 +19,8 @@ namespace POSApp.Forms
 
         private void MnuItemAdd_Click(object sender, EventArgs e)
         {
-           FrmEditItem frmEditItem = new FrmEditItem();
-           frmEditItem.ShowDialog();
+            FrmEditItem frmEditItem = new FrmEditItem();
+            frmEditItem.ShowDialog();
         }
     }
 }
