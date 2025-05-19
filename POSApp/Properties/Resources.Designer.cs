@@ -63,6 +63,16 @@ namespace POSApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Addicon {
+            get {
+                object obj = ResourceManager.GetObject("Addicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Package_add {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Package-add", resourceCulture);

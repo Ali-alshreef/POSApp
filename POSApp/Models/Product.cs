@@ -11,5 +11,6 @@ namespace POSApp.Models
         public string ItemName { get; set; }
         public string Barcode { get; set; }
         public decimal Price { get; set; }
+
     }
 }

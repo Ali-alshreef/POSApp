@@ -36,13 +36,16 @@
             label3 = new Label();
             label4 = new Label();
             txtBarcode = new TextBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)NUDPrice).BeginInit();
             SuspendLayout();
             // 
             // txtItemName
             // 
-            txtItemName.Location = new Point(125, 61);
+            txtItemName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtItemName.Location = new Point(125, 53);
             txtItemName.Margin = new Padding(4);
+            txtItemName.MaxLength = 5;
             txtItemName.Name = "txtItemName";
             txtItemName.PlaceholderText = "ادخل إسم الصنف";
             txtItemName.Size = new Size(272, 26);
@@ -52,12 +55,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(45, 64);
+            label1.BackColor = Color.White;
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(33, 61);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(60, 18);
             label1.TabIndex = 1;
             label1.Text = "إسم الصنف";
+            label1.MouseLeave += label1_MouseLeave;
+            label1.MouseHover += label1_MouseHover;
             // 
             // button1
             // 
@@ -85,11 +92,15 @@
             // 
             // button2
             // 
-            button2.Location = new Point(151, 230);
+            button2.Font = new Font("Bold Italic Art", 18F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            button2.Image = Properties.Resources.Addicon;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(82, 199);
             button2.Name = "button2";
-            button2.Size = new Size(75, 32);
+            button2.Size = new Size(159, 75);
             button2.TabIndex = 6;
             button2.Text = "جديد";
+            button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -123,11 +134,23 @@
             txtBarcode.TabIndex = 8;
             txtBarcode.TextAlign = HorizontalAlignment.Center;
             // 
+            // button3
+            // 
+            button3.Location = new Point(411, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 10;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
+            // 
             // FrmEditItem
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(508, 283);
+            Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(txtBarcode);
             Controls.Add(label3);
@@ -137,10 +160,13 @@
             Controls.Add(label1);
             Controls.Add(txtItemName);
             Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Margin = new Padding(4);
             Name = "FrmEditItem";
-            Text = "FrmEditItem";
+            Text = "fgytyt";
+            FormClosing += FrmEditItem_FormClosing;
             Load += FrmEditItem_Load;
+            MouseClick += FrmEditItem_MouseClick;
             ((System.ComponentModel.ISupportInitialize)NUDPrice).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -156,5 +182,6 @@
         private Label label3;
         private Label label4;
         private TextBox txtBarcode;
+        private Button button3;
     }
 }
